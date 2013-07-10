@@ -1,0 +1,6 @@
+{
+  "app": {
+    "description":  "Control/Restrict assignees availability",
+    "name":         "Group Control"
+  }
+}

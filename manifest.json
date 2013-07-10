@@ -1,0 +1,11 @@
+{
+  "name": "Group Control",
+  "author": {
+    "name": "Pierre Nespo",
+    "email": "pnespo@zendesk.com"
+  },
+  "defaultLocale": "en",
+  "private": true,
+  "location": ["ticket_sidebar", "new_ticket_sidebar"],
+  "frameworkVersion": "0.5"
+}
