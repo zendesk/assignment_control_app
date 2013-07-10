@@ -5,7 +5,7 @@ Restrict available assignees based on user ids, tags, groups and organizations.
 
 ### Settings
 
-#### - Configuration
+#### Configuration
 
 This should be a valid JSON object that look like this:
 
