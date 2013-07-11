@@ -1,6 +1,32 @@
 {
   "app": {
     "description":  "Control/Restrict assignees availability",
-    "name":         "Group Control"
+    "name":         "Group Control",
+    "parameters": {
+      "hidden_user_ids":{
+        "label": "Hidden Users",
+        "helpText": "A comma separated list of user ids."
+      },
+      "hidden_group_ids":{
+        "label": "Hiden Groups",
+        "helpText": "A comma separated list of group ids."
+      },
+      "targeted_user_ids":{
+        "label": "Targeted Users",
+        "helpText": "A comma separated list of user ids."
+      },
+      "targeted_user_tags":{
+        "label": "Targeted User Tags",
+        "helpText": "A comma separated list of user tags."
+      },
+      "targeted_organization_ids":{
+        "label": "Targeted Organizations",
+        "helpText": "A comma separated list of organization ids."
+      },
+      "targeted_group_ids":{
+        "label": "Targeted Groups",
+        "helpText": "A comma separated list of group ids."
+      }
+    }
   }
 }

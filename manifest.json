@@ -4,6 +4,32 @@
     "name": "Pierre Nespo",
     "email": "pnespo@zendesk.com"
   },
+  "parameters": [
+    {
+      "name": "hidden_user_ids",
+      "type": "text"
+    },
+    {
+      "name": "hidden_group_ids",
+      "type": "text"
+    },
+    {
+      "name": "targeted_user_ids",
+      "type": "text"
+    },
+    {
+      "name": "targeted_user_tags",
+      "type": "text"
+    },
+    {
+      "name": "targeted_organization_ids",
+      "type": "text"
+    },
+    {
+      "name": "targeted_group_ids",
+      "type": "text"
+    }
+  ],
   "defaultLocale": "en",
   "private": true,
   "location": ["ticket_sidebar", "new_ticket_sidebar"],
