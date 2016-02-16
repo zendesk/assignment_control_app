@@ -45,23 +45,30 @@
     hideAssigneeOptions: function(){
       var group_ids = this._settings('hidden_group_ids');
       var user_ids = this._settings('hidden_user_ids');
+      var removed_groups = [];
 
       if (this.setting('assign_to_self')) {
         user_ids.splice(user_ids.indexOf(this.currentUser().id().toString()));
 
         _.each(this.current_user_group_ids, function(id) {
-          group_ids.splice(group_ids.indexOf(id.toString()));
+          id = id.toString();
+          removed_groups.push(id);
+          group_ids.splice(group_ids.indexOf(id));
         });
       }
 
       _.each(this.ticketFields('assignee').options(), function(option){
         var group_and_user = option.value().split(':'),
-        group_id = group_and_user[0],
-        user_id = group_and_user[1] || "";
+            group_and_user_label = option.label().split('::'),
+            group_id = group_and_user[0],
+            user_id = group_and_user[1] || "",
+            assignable_group = group_and_user_label[0] == group_and_user_label[1];
 
         if (_.contains(group_ids, group_id) ||
+            (assignable_group && _.contains(removed_groups, group_id)) ||
             _.contains(user_ids, user_id)){
-            option.hide();
+          console.log("hiding", group_and_user_label);
+          option.hide();
         }
       });
     },
