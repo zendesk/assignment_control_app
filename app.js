@@ -11,14 +11,15 @@
       }
     },
     events: {
-      'app.activated': function(app){
-        if (app.firstLoad) { return this.ajax('fetchCurrentUser'); }
+      'app.created': function(){
+        this.ajax('fetchCurrentUser');
       },
       'fetchCurrentUser.done': 'initialize'
     },
 
     initialize: function(data) {
       this.current_user = _.extend(data, data.user);
+      this.current_user_group_ids = _.map(data.groups, function(g) { return g['id']; });
 
       if (this.currentUserIsTarget())
         return this.hideAssigneeOptions();
@@ -45,6 +46,14 @@
       var group_ids = this._settings('hidden_group_ids');
       var user_ids = this._settings('hidden_user_ids');
 
+      if (this.setting('assign_to_self')) {
+        user_ids.splice(user_ids.indexOf(this.currentUser().id().toString()));
+
+        _.each(this.current_user_group_ids, function(id) {
+          group_ids.splice(group_ids.indexOf(id.toString()));
+        });
+      }
+
       _.each(this.ticketFields('assignee').options(), function(option){
         var group_and_user = option.value().split(':'),
         group_id = group_and_user[0],
@@ -52,7 +61,7 @@
 
         if (_.contains(group_ids, group_id) ||
             _.contains(user_ids, user_id)){
-          option.hide();
+            option.hide();
         }
       });
     },

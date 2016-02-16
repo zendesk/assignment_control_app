@@ -6,6 +6,10 @@
   },
   "parameters": [
     {
+      "name": "assign_to_self",
+      "type": "checkbox"
+    },
+    {
       "name": "hidden_user_ids",
       "type": "text"
     },
@@ -33,5 +37,6 @@
   "defaultLocale": "en",
   "private": true,
   "location": ["ticket_sidebar", "new_ticket_sidebar"],
-  "frameworkVersion": "0.5"
+  "frameworkVersion": "1.0",
+  "noTemplate": true
 }

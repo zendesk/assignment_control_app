@@ -3,6 +3,10 @@
     "description":  "Control/Restrict assignees availability",
     "name":         "Group Control",
     "parameters": {
+      "assign_to_self":{
+        "label": "Agent can assign to self",
+        "helpText": "Can the agent assign the ticket to himself."
+      },
       "hidden_user_ids":{
         "label": "Hidden Users",
         "helpText": "A comma separated list of user ids."
