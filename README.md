@@ -2,4 +2,9 @@
 
 # Group Control App
 
+## Description:
+
 Restrict available assignees based on user ids, tags, groups and organizations.
+
+## Screenshot(s):
+![screenshot-1](https://d1eipm3vz40hy0.cloudfront.net/images/p-apps-marketplace/apps/52174/screenshot-0.png)
