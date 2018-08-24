@@ -8,7 +8,7 @@
         "helpText": "A comma separated list of user ids."
       },
       "hidden_group_ids":{
-        "label": "Hiden Groups",
+        "label": "Hidden Groups",
         "helpText": "A comma separated list of group ids."
       },
       "targeted_user_ids":{
